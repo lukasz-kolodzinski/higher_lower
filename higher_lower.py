@@ -12,7 +12,7 @@ def easy_mode():
     global game_on
     game_on = True
     while game_on is True:
-        user_guess = int(input('Guess the number from range 0-10: '))
+        user_guess = int(input('Welcome in Easy Mode! Guess the number from range 0-10: '))
         if user_guess > magic_number:
             print('Too high. Try again.')
         elif user_guess < magic_number:
@@ -24,3 +24,13 @@ def easy_mode():
                 easy_mode()
             else:
                 quit()
+def game_start():
+    global game_on
+    game_on = True
+    game_behavior = input('Hello! Choose game level or quit. Type: EASY or HARD or QUIT ')
+    if game_behavior == 'EASY':
+        easy_mode()
+    elif game_behavior == 'HARD':
+        hard_mode()
+    else:
+        game_on = False
