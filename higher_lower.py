@@ -19,18 +19,32 @@ def easy_mode():
             print('Too low. Try again.')
         else:
             print('Great! You won!')
-            again = input('Do you want play again? Type YES or NO: ')
-            if again == 'YES':
-                easy_mode()
-            else:
-                quit()
+            play_again()
+#            again = input('Do you want play again? Type YES or NO: ')
+#            if again == 'YES':
+#                easy_mode()
+#            else:
+#                quit()
+
 def game_start():
     global game_on
     game_on = True
-    game_behavior = input('Hello! Choose game level or quit. Type: EASY or HARD or QUIT ')
+    game_behavior = input('Choose game level or quit. Type: EASY or HARD or QUIT: ')
     if game_behavior == 'EASY':
         easy_mode()
     elif game_behavior == 'HARD':
         hard_mode()
     else:
         game_on = False
+        print('Bye. See you soon!')
+
+def play_again():
+    global game_on
+    game_on = True
+    new_game = input('Do you want to play again? Type YES or NO: ')
+    if new_game == 'YES':
+        game_start()
+    else:
+        game_on = False
+
+game_start()
