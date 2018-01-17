@@ -11,8 +11,9 @@ def easy_mode():
     magic_number = int(random.randrange(0,11))
     global game_on
     game_on = True
+    print('Welcome in Easy Mode! Guess the number from range 0-10: ')
     while game_on is True:
-        user_guess = int(input('Welcome in Easy Mode! Guess the number from range 0-10: '))
+        user_guess = int(input(""))
         if user_guess > magic_number:
             print('Too high. Try again.')
         elif user_guess < magic_number:
@@ -26,6 +27,28 @@ def easy_mode():
 #            else:
 #                quit()
 
+def hard_mode():
+    global magic_number
+    magic_number = int(random.randrange(0,11))
+    global answers
+    answers = 3
+    answers_counter = 0
+    print('Welcome in Hard Mode (you have only 3 chances). Guess the number from range 0-10: ')
+    while answers_counter <3:
+        user_guess = int(input(''))
+        if user_guess > magic_number:
+            print('Too high. Try again.')
+            answers_counter = answers_counter + 1
+        elif user_guess < magic_number:
+            print('Too low. Try again.')
+            answers_counter = answers_counter + 1
+        elif user_guess == magic_number:
+            print('Great! You won!')
+            play_again()
+    else:
+        print('Game Over. ' + 'Correct number was: ' + str(magic_number))
+        play_again()
+        
 def game_start():
     global game_on
     game_on = True
