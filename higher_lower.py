@@ -33,7 +33,7 @@ def hard_mode():
     global answers
     answers = 3
     answers_counter = 0
-    print('Welcome in Hard Mode (you have only 3 chances). Guess the number from range 0-10: ')
+    print('Welcome in Hard Mode (you have only 3 attempts). Guess the number from range 0-10: ')
     while answers_counter < answers:
         user_guess = int(input(''))
         if user_guess > magic_number:
