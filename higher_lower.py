@@ -57,10 +57,13 @@ def game_start():
         easy_mode()
     elif game_behavior == 'HARD':
         hard_mode()
-    else:
+    elif game_behavior == 'QUIT':
         game_on = False
         print('Bye. See you soon!')
-
+    else:
+        print('Operation not allowed. Try again.')
+        game_start()
+        
 def play_again():
     global game_on
     game_on = True
