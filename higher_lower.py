@@ -34,13 +34,13 @@ def hard_mode():
     answers = 3
     answers_counter = 0
     print('Welcome in Hard Mode (you have only 3 chances). Guess the number from range 0-10: ')
-    while answers_counter <3:
+    while answers_counter < answers:
         user_guess = int(input(''))
         if user_guess > magic_number:
-            print('Too high. Try again.')
+            print('Too high.')
             answers_counter = answers_counter + 1
         elif user_guess < magic_number:
-            print('Too low. Try again.')
+            print('Too low.')
             answers_counter = answers_counter + 1
         elif user_guess == magic_number:
             print('Great! You won!')
@@ -63,7 +63,7 @@ def game_start():
     else:
         print('Operation not allowed. Try again.')
         game_start()
-        
+
 def play_again():
     global game_on
     game_on = True
